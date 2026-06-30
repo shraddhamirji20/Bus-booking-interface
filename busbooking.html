@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bus Ticket Booking</title>
+        <link rel="stylesheet" href="busbooking.css">
+    </head>
+    <body>
+        <div class="container">
+
+        <h1>🚌Bus Ticket Booking🚌</h1>
+
+        <form>
+            <label>Passenger Name:</label>
+            <input type="text" id="name">
+
+            <label>From:</label>
+            <select id="from">
+                <option>Sangli</option>
+                <option>Kolhapur</option>
+                <option>Satara</option>
+                <option>Pune</option>
+                <option>Solapur</option>
+                <option>Mumbai</option>
+            </select>
+
+            <label>To:</label>
+            <select id="to">
+                <option>Sangli</option>
+                <option>Kolhapur</option>
+                <option>Satara</option>
+                <option>Pune</option>
+                <option>Solapur</option>
+                <option>Mumbai</option>
+            </select>
+
+            <label>Select Seat:</label>
+            <select id="seat">
+                <option>A1</option>
+                <option>A2</option>
+                <option>B1</option>
+                <option>B2</option>
+                <option>C1</option>
+                <option>C2</option>
+            </select>
+
+            <label>Ticket Price:</label>
+            <input type="text" value="₹200" readonly>
+
+            <button type="button" onclick="BookTicket()">
+                Book Ticket
+            </button>
+
+            </form>
+
+            <div id="result"></div>
+
+        </div>
+
+            
+        <script src="busbooking.js"></script>
+    </body>
+</html>
