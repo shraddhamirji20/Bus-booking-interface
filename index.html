@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Lectures – JavaScript Basics</title>
+  <meta name="description" content="A collection of JavaScript fundamentals lecture pages covering variables, data types, string methods, array methods, events, DOM selectors and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f17;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.05));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); border-color: rgba(139,92,246,0.5); }
+    .card:hover::before { opacity: 1; }
+
+    .icon {
+      font-size: 1.6rem;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-body { flex: 1; }
+    .card-title { font-weight: 600; font-size: 1rem; margin-bottom: 4px; color: #f1f5f9; }
+    .card-desc { font-size: 0.83rem; color: #64748b; line-height: 1.5; }
+
+    .arrow {
+      margin-left: auto;
+      color: #6366f1;
+      font-size: 1.1rem;
+      align-self: center;
+      transition: transform 0.2s ease;
+    }
+    .card:hover .arrow { transform: translateX(4px); }
+
+    footer {
+      margin-top: 64px;
+      color: #334155;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">📚 Lecture Notes</div>
+    <h1>JavaScript Basics</h1>
+    <p class="subtitle">Select a topic below to view the lecture page.</p>
+  </div>
+
+  <div class="grid">
+
+    <a href="Restaurantlandingpage.html" class="card">
+      <div class="icon">📦</div>
+      <div class="card-body">
+        <div class="card-title">Variables</div>
+        <div class="card-desc">var, let, const and scoping rules</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="loginpage1.html" class="card">
+      <div class="icon">🔢</div>
+      <div class="card-body">
+        <div class="card-title">Data Types</div>
+        <div class="card-desc">Primitive and reference types in JS</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="News task.html" class="card">
+      <div class="icon">🔤</div>
+      <div class="card-body">
+        <div class="card-title">String Methods</div>
+        <div class="card-desc">slice, indexOf, replace, and more</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="My portfolio.html" class="card">
+      <div class="icon">📋</div>
+      <div class="card-body">
+        <div class="card-title">Array Methods</div>
+        <div class="card-desc">map, filter, reduce, push, pop…</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="changeimageusingelement,html.html" class="card">
+      <div class="icon">🔀</div>
+      <div class="card-body">
+        <div class="card-title">Switch Statement</div>
+        <div class="card-desc">Control flow with switch/case</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="form task2.html" class="card">
+      <div class="icon">⌨️</div>
+      <div class="card-body">
+        <div class="card-title">Student form</div>
+        <div class="card-desc">Form Example</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="grid2.html" class="card">
+      <div class="icon">🖱️</div>
+      <div class="card-body">
+        <div class="card-title">Grid examples</div>
+        <div class="card-desc">grid example</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="Switchcase.html" class="card">
+      <div class="icon">🎯</div>
+      <div class="card-body">
+        <div class="card-title">Switch cases in JS</div>
+        <div class="card-desc">Switch cases</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a href="SEO task 1.html" class="card">
+      <div class="icon">🎯</div>
+      <div class="card-body">
+        <div class="card-title">SEO basics</div>
+        <div class="card-desc">SEO task</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <footer>Web Lectures &copy; 2026</footer>
+
+</body>
+</html>
